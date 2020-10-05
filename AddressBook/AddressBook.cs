@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace AddressBook
 {
     class AddressBook
     {
         private Dictionary<string, Contact> addressBook = new Dictionary<string, Contact>();
-        public void AddContact(string firstName, string lastName, string address, string city, string state, int zip, long phoneNumber, string email)
+        public void AddContact(string firstName, string lastName, string address, string city, string state, int zip, string phoneNumber, string email)
         {
             Contact contact = new Contact();
             contact.FirstName = firstName;
