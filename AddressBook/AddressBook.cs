@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Text;
 namespace AddressBook
 {
-    class AddressBook
+    class AddressBook : IContacts
     {
         private Dictionary<string, Contact> addressBook = new Dictionary<string, Contact>();
         public void AddContact(string firstName, string lastName, string address, string city, string state, int zip, string phoneNumber, string email)
         {
-            Contact contact = new Contact();
-            contact.FirstName = firstName;
-            contact.LastName = lastName;
-            contact.Address = address;
-            contact.City = city;
-            contact.State = state;
-            contact.Zip = zip;
-            contact.PhoneNumber = phoneNumber;
-            contact.Email = email;
+            Contact contact = new Contact
+            {
+                FirstName = firstName,
+                LastName = lastName,
+                Address = address,
+                City = city,
+                State = state,
+                Zip = zip,
+                PhoneNumber = phoneNumber,
+                Email = email
+            };
             addressBook.Add(contact.FirstName, contact);
         }
         public void ViewContact()
