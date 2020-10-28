@@ -20,6 +20,7 @@ namespace AddressBook
                 Email = email
             };
             addressBook.Add(contact.FirstName, contact);
+            Console.WriteLine("Contact added sucesfully. \n" );
         }
         public void ViewContact(string name)
         {
