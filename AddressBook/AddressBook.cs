@@ -6,6 +6,7 @@ namespace AddressBook
     class AddressBook : IContacts
     {
         private Dictionary<string, Contact> addressBook = new Dictionary<string, Contact>();
+        private Dictionary<string, AddressBook> addressBookDictionary = new Dictionary<string, AddressBook>();
         public void AddContact(string firstName, string lastName, string address, string city, string state, int zip, string phoneNumber, string email)
         {
             Contact contact = new Contact
@@ -111,6 +112,16 @@ namespace AddressBook
             {
                 Console.WriteLine("\nNot Found, Try Again.\n");
             }
+        }
+        public void AddAddressBook(string bookName)
+        {
+            AddressBook addressBook = new AddressBook();
+            addressBookDictionary.Add(bookName, addressBook);
+            Console.WriteLine("AddressBook Created.");
+        }
+        public Dictionary<string, AddressBook> GetAddressBook()
+        {
+            return addressBookDictionary;
         }
     }
 }
